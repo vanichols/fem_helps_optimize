@@ -1,0 +1,3468 @@
+<folder version="37" creator="Apsim 7.9-r0" name="simulations">
+  <simulation name="ames_CC_270">
+    <metfile name="met">
+      <filename name="filename" input="yes">ames-met.met</filename>
+    </metfile>
+    <clock>
+      <start_date type="date" description="Enter the start date of the simulation">01/01/1996</start_date>
+      <end_date type="date" description="Enter the end date of the simulation">31/12/2016</end_date>
+    </clock>
+    <summaryfile />
+    <area name="paddock">
+      <fertiliser />
+      <maize>
+        <ini>
+          <filename input="yes">_master_maize_XML.xml</filename>
+        </ini>
+      </maize>
+      <soybean>
+        <ini>
+          <filename input="yes">_master_soy_XML.xml</filename>
+        </ini>
+      </soybean>
+      <folder name="Manager folder">
+        <manager name="N Deposition">
+          <ui>
+            <category type="category" />
+            <ppm type="text" description="What to multiply rain by?">0.0078</ppm>
+            <category2 type="category" description="Model side stuff" />
+            <varname type="text" description="Name of the NO3_N deposition variable as seen by the model">N_deposition</varname>
+            <fertmodule type="modulename" description="Name of module that applies nitrogen">fertiliser</fertmodule>
+          </ui>
+          <script>
+            <text>
+         
+            [varname] = rain * [ppm]
+            N_deposition_tot = N_deposition_tot + [varname]
+            if (rain &gt; 0) then
+               [fertmodule] apply amount = [varname](kg/ha), depth = 0 (mm), type = NO3_N ()
+            endif
+      </text>
+            <event>start_of_day</event>
+          </script>
+        </manager>
+        <operations name="CC_maize_Nfert">
+          <operation condition="start_of_day">
+            <date>10/4/1980</date>
+            <action>! my notes</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>3/5/1999</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>4/5/2000</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/2001</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>26/4/2002</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>22/4/2003</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>15/4/2004</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>3/5/2005</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>4/5/2006</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/2007</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>6/5/2008</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>12/5/2009</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>5/5/2010</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>19/5/2011</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>10/5/2012</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>13/6/2013</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>6/5/2014</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>18/5/2015</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>6/5/2016</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>6/5/2017</date>
+            <action>fertiliser apply  amount = 0 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>6/5/2018</date>
+            <action>fertiliser apply  amount = 0 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>10/7/2019</date>
+            <action>fertiliser apply  amount = 270 (kg/ha), depth = 50 (mm), type = UAN_N</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>! start up period </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>24/4/1992</date>
+            <action>fertiliser apply  amount = 170 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>24/4/1994</date>
+            <action>fertiliser apply  amount = 170 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>24/4/1996</date>
+            <action>fertiliser apply  amount = 170 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>24/4/1998</date>
+            <action>fertiliser apply  amount = 170 (kg/ha), depth = 50 (mm), type = urea_n</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+        </operations>
+        <operations name="CC_corn_planitng">
+          <operation condition="start_of_day">
+            <date>5/5/1980</date>
+            <action>! this is the maize of the maize-soy rotation in Ames</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>19/5/1999</date>
+            <action>maize sow plants=7.9, sowing_depth=75,cultivar=psims_107RM, row_spacing=760,crop_class=maize ! Pioneer 34G81 (107 d relative maturity)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>5/5/2000</date>
+            <action>maize sow plants=7.4, sowing_depth=75,cultivar=psims_AmesHail, row_spacing=760,crop_class=maizev! Pioneer 34G81 (107 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>9/5/2001</date>
+            <action>maize sow plants=6.5, sowing_depth=50,cultivar=psims_103RM, row_spacing=760,crop_class=maize !Pioneer P34G13 (103?)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>3/5/2002</date>
+            <action>maize sow plants=7.9, sowing_depth=75,cultivar=psims_105RM, row_spacing=760,crop_class=maize ! Dekalb 55-51 RR/YGCB (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>29/4/2003</date>
+            <action>maize sow plants=7.8, sowing_depth=50,cultivar=psims_108RM, row_spacing=760,crop_class=maize ! Dekalb 58-24 RR/YGCB (108 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>27/4/2004</date>
+            <action>maize sow plants=8.0, sowing_depth=75,cultivar=psims_107RM, row_spacing=760,crop_class=maize ! Dekalb 57-81 RR/YGCB (107 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>5/5/2005</date>
+            <action>maize sow plants=8.0, sowing_depth=75,cultivar=psims_106RM, row_spacing=760,crop_class=maize ! Pioneer 35Y62 HXX/RR2/LL (106 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>9/5/2006</date>
+            <action>maize sow plants=8.0, sowing_depth=75,cultivar=psims_106RM,row_spacing=760,crop_class=maize ! Pioneer 35Y61 (106 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>13/5/2007</date>
+            <action>maize sow plants=8.0, sowing_depth=75,cultivar=psims_109RM,row_spacing=760,crop_class=maize ! Pioneer 34A20 (HXX/RR2/LL) (109 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>14/5/2008</date>
+            <action>maize sow plants=7.4, sowing_depth=75,cultivar=psims_111RM,row_spacing=760,crop_class=maize ! Dekalb DKC61-69 (111 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>5/5/2009</date>
+            <action>maize sow plants=8.0, sowing_depth=75,cultivar=psims_105RM, row_spacing=760,crop_class=maize ! Pioneer 35K33 (HXX/RR2/LL) (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>29/4/2010</date>
+            <action>maize sow plants=8.0, sowing_depth=75,cultivar=psims_105RM, row_spacing=760,crop_class=maize ! Pioneer 35F44 (HXX/RR2/LL) (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/5/2011</date>
+            <action>maize sow plants=7.9, sowing_depth=75,cultivar=psims_106RM,row_spacing=760,crop_class=maize ! Fontanelle 6T510 (106 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>10/5/2012</date>
+            <action>maize sow plants=7.9, sowing_depth=75,cultivar=psims_104RM, row_spacing=760,crop_class=maize ! Pioneer P0528XR (HXX/LL/RR2) (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>24/5/2013</date>
+            <action>maize sow plants=7.9, sowing_depth=75,cultivar=psims_AmesHail, row_spacing=760,crop_class=maize ! Pioneer 0461XR (HXX/LL/RR2) (104 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>7/5/2014</date>
+            <action>maize sow plants=7.9, sowing_depth=75,cultivar=psims_105RM, row_spacing=760,crop_class=maize ! Pioneer 0591AMX (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>13/5/2015</date>
+            <action>maize sow plants=8.9, sowing_depth=75,cultivar=psims_107RM, row_spacing=760,crop_class=maize ! FS 57QX1 RIB (107)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>27/4/2016</date>
+            <action>maize sow plants=8.6, sowing_depth=75,cultivar=psims_105RM,row_spacing=760,crop_class=maize ! Pioneer P0570AMXT (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/2017</date>
+            <action>maize sow plants=8.6, sowing_depth = 75, cultivar=psims_105RM,row_spacing=760,crop_class=maize ! Pioneer P0570AMXT (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/2018</date>
+            <action>maize sow plants=8.6, sowing_depth=75,cultivar=psims_105RM,row_spacing=760,crop_class=maize ! Pioneer P0570AMXT (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>5/6/2019</date>
+            <action>maize sow plants=8.6, sowing_depth=75,cultivar=psims_105RM,row_spacing=760,crop_class=maize ! Pioneer P0570AMXT (105 d)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>! start up period </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/1991</date>
+            <action>soybean sow plants=40.5,sowing_depth=50,cultivar=psims_24MG,row_spacing=760,crop_class=plant</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/1992</date>
+            <action>maize sow plants=7.9, sowing_depth=50,cultivar=psims_106RM, row_spacing=760,crop_class=maize </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/1993</date>
+            <action>soybean sow plants=40.5,sowing_depth=50,cultivar=psims_24MG,row_spacing=760,crop_class=plant</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/1994</date>
+            <action>maize sow plants=7.9, sowing_depth=50,cultivar=psims_106RM, row_spacing=760,crop_class=maize </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/1995</date>
+            <action>soybean sow plants=40.5,sowing_depth=50,cultivar=psims_24MG,row_spacing=760,crop_class=plant</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/1996</date>
+            <action>maize sow plants=7.9, sowing_depth=50,cultivar=psims_106RM, row_spacing=760,crop_class=maize </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/1997</date>
+            <action>soybean sow plants=40.5,sowing_depth=50,cultivar=psims_24MG,row_spacing=760,crop_class=plant</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>1/5/1998</date>
+            <action>maize sow plants=7.9, sowing_depth=50,cultivar=psims_106RM, row_spacing=760,crop_class=maize </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+        </operations>
+        <operations name="CC_harvest">
+          <operation condition="start_of_day">
+            <date>5/5/1980</date>
+            <action>! ask isaiah probably you need to put both end_crop and then harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/10/1999</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/10/1999</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>26/9/2000</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>26/9/2000</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>15/10/2001</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>15/10/2001</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>8/10/2002</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>8/10/2002</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/10/2003</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/10/2003</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>12/10/2004</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>12/10/2004</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/10/2005</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/10/2005</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>19/10/2006</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>19/10/2006</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/10/2007</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/10/2007</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>3/11/2008</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>3/11/2008</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>13/10/2009</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>13/10/2009</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>7/10/2010</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>7/10/2010</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/2011</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/2011</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>4/10/2012</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>4/10/2012</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>8/10/2013</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>8/10/2013</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/10/2014</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/10/2014</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>7/10/2015</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>7/10/2015</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/10/2016</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/10/2016</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/10/2017</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/10/2017</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/10/2018</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/10/2018</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>6/11/2019</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>6/11/2019</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>! start up period </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1991</date>
+            <action>soybean harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1991</date>
+            <action>soybean end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1992</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1992</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1993</date>
+            <action>soybean harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1993</date>
+            <action>soybean end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1994</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1994</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1995</date>
+            <action>soybean harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1995</date>
+            <action>soybean end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1996</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1996</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1997</date>
+            <action>soybean harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1997</date>
+            <action>soybean end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1998</date>
+            <action>maize harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/10/1998</date>
+            <action>maize end_crop</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/11/1999</date>
+            <action>!'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>26/10/2000</date>
+            <action>!'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>15/11/2001</date>
+            <action>!'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>8/11/2002</date>
+            <action>!'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/11/2003</date>
+            <action>!'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>12/11/2004</date>
+            <action>!'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+        </operations>
+        <operations name="Tillage1">
+          <operation condition="start_of_day">
+            <date>10/4/1980</date>
+            <action>! my notes</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>5/5/1999</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>4/11/1999</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/4/2000</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>10/10/2000</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.3 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/4/2001</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.15 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>29/11/2001</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>19/4/2002</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>22/10/2002</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.3 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>15/4/2003</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>4/11/2003</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.6 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>15/4/2004</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.29 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>26/10/2004</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>26/4/2005</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>31/10/2005</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/4/2006</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>2/11/2006</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>29/4/2007</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/10/2007</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>30/4/2008</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/11/2008</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/4/2009</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>27/10/2009</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.6 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>15/4/2010</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/10/2010</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>27/4/2011</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>3/11/2011</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>26/4/2012</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>18/10/2012</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>10/5/2013</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>22/10/2013</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.6 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>23/4/2014</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>31/10/2014</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>29/4/2015</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/10/2015</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>13/4/2016</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/10/2016</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/2017</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/2017</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/2018</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/2018</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/2019</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/2019</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>! start up period</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/1991</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/1991</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/1992</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/1992</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/1993</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/1993</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/1994</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/1994</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/1995</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/1995</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/1996</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/1996</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/1997</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/1997</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.5 (), tillage_depth = 250</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>17/4/1998</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.25 (), tillage_depth = 150</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>20/11/1998</date>
+            <action>'surfaceorganicmatter' tillage type = user_defined, f_incorp = 0.6 (), tillage_depth = 250</action>
+          </operation>
+        </operations>
+      </folder>
+      <manager name="Calculations">
+        <script>
+          <text>
+          </text>
+          <event>init</event>
+        </script>
+        <script>
+          <text>crop_buac = maize.yield * 0.0159 / 0.85 + soybean.yield * 0.0149/0.87
+cornbuac = maize.yield * 0.0159 / 0.85
+soybuac = soybean.yield *0.0149/0.87
+crop_yield = maize.yield + soybean.yield
+biomass_crop = maize.biomass + soybean.biomass
+CropET = es + maize.ep + soybean.ep
+CropT = maize.ep + soybean.ep
+root_crop = maize.root_depth + soybean.root_depth
+flowering_crop = maize.flowering_date + soybean.flowering_date
+maturity_crop = maize.maturity_date + soybean.maturity_date
+lai_crop = maize.lai + soybean.lai
+Nupt_crop = 10 * maize.biomass_n + 10 * soybean.biomass_n
+Nupt_grain = 10 * maize.grain_n + 10 * soybean.grain_n
+
+swdef_expan_crop = maize.swdef_expan + soybean.swdef_expan
+oxdef_photo_crop = maize.oxdef_photo + soybean.oxdef_photo
+nfact_expan_crop = maize.nfact_expan + soybean.nfact_expan
+
+Nleaching = subsurface_drain_no3 + flow_no3(11)
+N_loss_rate = subsurface_drain_no3 + flow_no3(11) + dnit()
+W_loss_rate = subsurface_drain + flow(11)
+
+co2 = 1.6471 * year - 2917.8    ! linear Interpolation 350 ppm in 1980, 406 ppm in 2018
+
+Harvest_date =  TargetStageDOY + maize.DaysAfterSowing + soybean.DaysAfterSowing 
+
+if watertable &lt; 500 then
+WT50cm = 1
+else
+WT50cm = 0
+endif
+
+no3_30cm = no3(1) + no3(2) + no3(3) + no3(4) + no3(5)
+
+
+stover_kg = maize.green_biomass - maize.yield +  soybean.green_biomass - soybean.yield
+stover_Nitr = 10*maize.green_biomass_n + 10*soybean.green_biomass_n - Nupt_grain
+
+if stover_Nitr &gt; 0 then
+stover_cn_ratio = stover_kg *0.4 / stover_Nitr  
+endif
+
+
+if soybean.biomass &gt; 0 then
+soy_hi = soybean.yield / soybean.biomass
+else
+soy_hi = 0
+endif
+
+cropHI = soy_hi + maize.hi
+
+root_kg = 10* maize.RootGreenWt + 10* soybean.RootGreenWt
+rootNconc = maize.RootGreenNConc + soybean.RootGreenNConc
+
+if biomass_crop &gt; 0 then
+RootShoot = root_kg / biomass_crop
+else
+RootShoot = 0
+endif
+
+if Nupt_crop &gt; 0 then
+crop_NHI = Nupt_grain / Nupt_crop
+else
+crop_NHI = 0
+endif
+
+
+
+
+SOC_7cm = 0.166 * oc(1) + 0.166 * oc(2) + 0.333 * oc(3) + 0.333 * oc(4)
+SOC_22cm = 0.333 * oc(4) + 0.666 * oc(5)
+SOC_45cm = 0.5 * oc(6) + 0.5 * oc(7)
+SOC_75cm = 0.5 * oc(8) + 0.5 * oc(9)
+SOC_105cm = 0.5 * oc(10) + 0.5 * oc(11)</text>
+          <event>start_of_day</event>
+        </script>
+        <script>
+          <text>
+          </text>
+          <event>end_of_day</event>
+        </script>
+      </manager>
+      <tracker>
+        <variable>maximum of crop_buac on end_of_day from SpecialReport5 to SpecialReport6 as CropYield</variable>
+        <variable>maximum of cornbuac on end_of_day from SpecialReport5 to SpecialReport6 as corn_buac</variable>
+        <variable>maximum of soybuac on end_of_day from SpecialReport5 to SpecialReport6 as soy_buac</variable>
+        <variable>maximum of biomass_crop on end_of_day from SpecialReport5 to SpecialReport6 as Bioma</variable>
+        <variable>maximum of root_crop on end_of_day from SpecialReport5 to SpecialReport6 as RootDepth</variable>
+        <variable>maximum of flowering_crop on end_of_day from SpecialReport5 to SpecialReport6 as FlowerDate</variable>
+        <variable>maximum of maturity_crop on end_of_day from SpecialReport5 to SpecialReport6 as MaturityDate</variable>
+        <variable>maximum of lai_crop on end_of_day from SpecialReport5 to SpecialReport6 as LAI_maximum</variable>
+        <variable>sum of CropET on end_of_day from SpecialReport5 to SpecialReport6 as ETAnnual</variable>
+        <variable>sum of CropT on end_of_day from SpecialReport5 to SpecialReport6 as CropTranspiration</variable>
+        <variable>maximum of Nupt_crop on end_of_day from SpecialReport5 to SpecialReport6 as TotalNupt</variable>
+        <variable>maximum of Nupt_grain on end_of_day from SpecialReport5 to SpecialReport6 as GrainlNupt</variable>
+        <variable>average of swdef_expan_crop on end_of_day from sowing to harvesting as AvgDroughtStress</variable>
+        <variable>average of oxdef_photo_crop on end_of_day from sowing to harvesting as AvgExcessiveWStress</variable>
+        <variable>average of nfact_expan_crop on end_of_day from sowing to harvesting as AvgNStress</variable>
+        <variable>average of watertable on end_of_day from sowing to harvesting as AvgWTInseason</variable>
+        <variable>sum of eo on end_of_day from SpecialReport5 to SpecialReport6 as EOAnnual</variable>
+        <variable>sum of runoff on end_of_day from SpecialReport5 to SpecialReport6 as RunoffAnnual</variable>
+        <variable>sum of W_loss_rate on end_of_day from SpecialReport5 to SpecialReport6 as Drainage</variable>
+        <variable>maximum of fertiliser on end_of_day from SpecialReport5 to SpecialReport6 as NR</variable>
+        <variable>sum of dlt_n_min() on end_of_day from SpecialReport5 to SpecialReport6 as GrossMiner</variable>
+        <variable>sum of dlt_n_min_tot() on end_of_day from SpecialReport5 to SpecialReport6 as NetMiner</variable>
+        <variable>sum of N_loss_rate on end_of_day from SpecialReport5 to SpecialReport6 as NlossTotal</variable>
+        <variable>sum of dnit() on end_of_day from SpecialReport5 to SpecialReport6 as Denitr</variable>
+        <variable>sum of Nleaching on end_of_day from SpecialReport5 to SpecialReport6 as NLeachAnnual</variable>
+        <variable>average of watertable on end_of_day from SpecialReport5 to SpecialReport6 as AvgWT</variable>
+        <variable>value of no3() on harvesting as NO3_atHarvest</variable>
+        <variable>value of no3() on sowing as NO3_atSowing</variable>
+        <variable>value of no3_30cm on sowing as NO3_30cmHarvest</variable>
+        <variable>value of no3_30cm on sowing as NO3_30cmSowing</variable>
+        <variable>maximum of crop_yield on end_of_day from SpecialReport5 to SpecialReport6 as CropYield_kg</variable>
+        <variable>maximum of Harvest_date on end_of_day from SpecialReport5 to SpecialReport6 as Harvest_doy</variable>
+        <variable>maximum of cropHI on end_of_day from SpecialReport5 to SpecialReport6 as crop_hi</variable>
+        <variable>maximum of maize.grain_no on end_of_day from SpecialReport5 to SpecialReport6 as Maize_GrainsNumber</variable>
+        <variable>maximum of maize.grain_size on end_of_day from SpecialReport5 to SpecialReport6 as Maize_GrainSize</variable>
+        <variable>value of surfaceom_wt on sowing as ResidueWTatSowing</variable>
+        <variable>value of surfaceom_n on sowing as ResidueNatSowing</variable>
+        <variable>sum of WT50cm on end_of_day from sowing to harvesting as DaysWTbelow50cm</variable>
+        <variable>sum of dlt_n_fixed on end_of_day from SpecialReport5 to SpecialReport6 as SoyNfixed</variable>
+        <variable>value of stover_kg on harvesting as StoverWT</variable>
+        <variable>value of stover_Nitr on harvesting as StoverNitrogen</variable>
+        <variable>value of stover_cn_ratio on harvesting as StoverCN</variable>
+        <variable>value of fom_c() on SpecialReport5 as FOM_january</variable>
+        <variable>value of biom_c() on SpecialReport5 as BIOM_january</variable>
+        <variable>value of root_kg on harvesting as RootWt_atHarv</variable>
+        <variable>value of RootShoot on harvesting as RS_ratio</variable>
+        <variable>value of rootNconc on harvesting as NconcRoot</variable>
+        <variable>value of crop_NHI on harvesting as NHI_crop</variable>
+        <variable>sum of dlt_n_min_res() on end_of_day from SpecialReport7 to SpecialReport8 as Res_MI_NtoJ</variable>
+        <variable>sum of dlt_n_min() on end_of_day from SpecialReport7 to SpecialReport8 as Gross_MI_NtoJ</variable>
+        <variable>sum of dlt_n_min_tot() on end_of_day from SpecialReport7 to SpecialReport8 as Net_MI_NtoJ</variable>
+        <variable>average of maize.plants on end_of_day from sowing to harvesting as PlantDensity</variable>
+        <variable>sum of subsurface_drain on end_of_day from SpecialReport5 to SpecialReport6 as DrainageTile</variable>
+      </tracker>
+      <manager2 name="Stage Day of Year">
+        <ui>
+          <TargetStage type="text" description="Target stage name (as specified in XML)">sowing</TargetStage>
+          <TargetCrop type="crop" description="Target crop">maize</TargetCrop>
+        </ui>
+        <text>
+using System;
+using ModelFramework;
+using CSGeneral;
+
+public class Script 
+{      
+   [Link] Paddock MyPaddock; // Can be used to dynamically get access to simulation structure and variables
+   [Input] DateTime Today;   // Equates to the value of the current simulation date - value comes from CLOCK
+   [Param] string TargetStage;         // The value for these will come from the Properties page.
+   [Param] string TargetCrop;
+   [Output] int TargetStageDAS;   // This variable is visible to the outputfile and other scripts under this name
+   [Output] int TargetStageDOY; 
+
+   private string stage, yesterday_stage;
+   private int daysaftersowing;
+
+   // The following event handler will be called once at the beginning of the simulation
+   [EventHandler] public void OnInitialised()
+   {
+
+      
+      
+   }
+
+   // The following event handler will be called each day 
+   [EventHandler] public void OnProcess()
+   {
+
+      MyPaddock.Get(TargetCrop + ".StageName", out stage);//Gets crop.stagename and crop.daysaftersowing
+      MyPaddock.Get(TargetCrop + ".DaysAfterSowing", out daysaftersowing);
+      
+      if (yesterday_stage != TargetStage &amp;&amp; stage == TargetStage)
+      {
+         TargetStageDAS = daysaftersowing;
+         TargetStageDOY = Today.DayOfYear;
+      }
+      
+      if (stage == "nocrop")
+      {
+         TargetStageDAS = 0;
+         TargetStageDOY = 0;
+      }
+      
+      
+      
+      yesterday_stage = stage;
+   }
+
+}
+  </text>
+      </manager2>
+      <manager name="Stage Day Info">
+        <ui>
+          <StageTarget type="text" description="Target Stage (from xml)">emergence</StageTarget>
+          <CropTarget type="crop" description="Target Crop">maize</CropTarget>
+          <DOYName type="text" description="Name of the variable (DOY)">emergDOY</DOYName>
+          <DASName type="text" description="Name of the variable (DAS)">emergDAS</DASName>
+        </ui>
+        <script>
+          <text> yesterday_stage = 'nocrop'</text>
+          <event>init</event>
+        </script>
+        <script>
+          <text>  if ([CropTarget].StageName = '[StageTarget]' AND yesterday_stage &lt;&gt; '[StageTarget]') then
+       [DOYName] = day 
+       [DASName] = [CropTarget].DaysAfterSowing
+  endif
+
+
+ if ([CropTarget].StageName = 'nocrop') then
+       [DOYName] = 0
+       [DASName] = 0
+ endif
+
+ yesterday_stage = [CropTarget].StageName
+
+</text>
+          <event>end_of_day</event>
+        </script>
+      </manager>
+      <manager2 name="InitialiseWaterTableOnce">
+        <ui>
+          <InitDOY type="text" description="Day of year to initialise the water table">1</InitDOY>
+          <WTDepth type="text" description="Depth to water table (mm)">1000</WTDepth>
+        </ui>
+        <text>Imports System
+Imports ModelFramework
+Imports CSGeneral
+Imports System.Collections.Generic
+
+Public Class Script
+   
+   &lt;Link()&gt; Dim MySimulation As Simulation
+   &lt;Link()&gt; Dim Clock As Clock
+   &lt;Param()&gt; Dim InitDOY As Integer
+   &lt;Param()&gt; Dim WTDepth As Single
+   &lt;Input&gt; Private dlayer As Double()           'Array of soil layer thicknesses - for calculation of mineral N in the soil
+   &lt;Input&gt; Dim Today As DateTime                ' Equates to the value of the current simulation date - from CLOCK
+   
+   &lt;Output&gt; Dim ProfileDepth As Double
+   &lt;Output&gt; Dim BBCPotential As Double
+   &lt;Output&gt; Dim InitPsi() As Double
+   &lt;Output&gt; Dim InitWTD As Boolean       'created to help initialize WTD on first day of the simulation, not DOY = 1
+      
+   &lt;EventHandler()&gt; Public Sub OnInit()
+      ProfileDepth = 0
+      BBCPotential = 0
+      InitWTD = False
+      
+   End Sub
+   
+   &lt;EventHandler()&gt; Public Sub OnPrepare()
+
+      'If (today.DayOfYear = InitDOY) Then
+      If (InitWTD = False) Then
+         ProfileDepth = MathUtility.Sum(dlayer)
+         BBCPotential = (ProfileDepth - WTDepth) / 10
+         ReDim InitPsi(dlayer.length - 1) 
+         
+         InitPsi(dlayer.length - 1) = BBCPotential 
+         InitPsi(0) = -WTDepth / 10.0
+         InitPsi(1) = InitPsi(0) + (dlayer(0) + dlayer(1) / 2) / 10
+         Dim i As Integer
+         
+         For i = 2 To dlayer.length - 2
+            InitPsi(i) = InitPsi(i - 1) + (dlayer(i - 1) + dlayer(i)) / 2 / 10   
+         Next
+         
+         'Dim SWIM As Component = MySimulation.LinkByName("SWIM")
+         MySimulation.Set("psi", InitPsi)
+         MySimulation.Set("bbc_potential", BBCPotential)
+         InitWTD = True
+         
+      End If      
+      
+      
+   End Sub
+
+
+End Class
+    </text>
+      </manager2>
+      <manager2 name="Reporter_Annual">
+        <ui>
+          <date type="text" description="Date for the special report">1-jan</date>
+          <date2 type="text" description="date for second one">31-dec</date2>
+        </ui>
+        <text>
+using System;
+using ModelFramework;
+using CSGeneral;
+
+public class Script 
+{      
+   [Link] Paddock MyPaddock; // Can be used to dynamically get access to simulation structure and variables
+   [Input] DateTime Today;   // Equates to the value of the current simulation date - value comes from CLOCK
+   [Param] string date;         // The value for this will come from the Properties page.
+   [Param] string date2;
+   
+   [Event] public event NullTypeDelegate SpecialReport5;
+   [Event] public event NullTypeDelegate SpecialReport6;
+
+   
+   // The following event handler will be called once at the beginning of the simulation
+   [EventHandler] public void OnInitialised()
+   {
+      
+   }
+      
+   // The following event handler will be called each day at the beginning of the day
+   [EventHandler] public void OnPrepare()
+   {
+      if (DateUtility.DatesEqual(date, Today))
+         SpecialReport5.Invoke();
+      
+      if (DateUtility.DatesEqual(date2, Today))
+         SpecialReport6.Invoke();
+   }
+   
+}
+       </text>
+      </manager2>
+      <manager name="Temperature Day Info">
+        <ui>
+          <TempTarget type="list" listvalues="maxt,mint" description="Maxt or mint">mint</TempTarget>
+          <TempValue type="crop" description="Value (in deg C)">0</TempValue>
+          <DOYName type="text" description="Name of the variable (DOY)">mintZeroDOY</DOYName>
+          <date1 type="text" description="Start date">15-aug</date1>
+          <date2 type="text" description="End date">31-dec</date2>
+        </ui>
+        <script>
+          <text> flag = 0</text>
+          <event>init</event>
+        </script>
+        <script>
+          <text> if (date_within('[date1], [date2]')) then
+     
+
+     if ([TempTarget] &lt; [TempValue] and flag = 0) then
+        [DOYName] = day
+        flag = 1
+     endif
+
+ else
+ [DOYName] = 0
+ flag = 0
+
+ endif
+  
+ </text>
+          <event>process</event>
+        </script>
+      </manager>
+      <outputfile>
+        <filename output="yes">ames_CC_270.out</filename>
+        <title>ames_CC_270</title>
+        <variables name="My Variables">
+          <variable>dd/mm/yyyy as Date</variable>
+          <variable>year</variable>
+          <variable>corn_buac</variable>
+        </variables>
+        <events name="My Variables Events">
+          <event>end_year</event>
+        </events>
+      </outputfile>
+      <surfaceom name="SurfaceOrganicMatter">
+        <PoolName type="text" description="Organic Matter pool name">soybean</PoolName>
+        <type type="text" description="Organic Matter type">soybean</type>
+        <mass type="text" description="Initial surface residue (kg/ha)">2000</mass>
+        <cnr type="text" description="C:N ratio of initial residue">45</cnr>
+        <standing_fraction type="text" description="Fraction of residue standing">0.0</standing_fraction>
+        <ini>
+          <filename input="yes">SurfaceOM_7.9.xml</filename>
+        </ini>
+      </surfaceom>
+      <Soil name="Soil_Ames">
+        <RecordNumber>0</RecordNumber>
+        <SoilType>Nicollet</SoilType>
+        <NearestTown>Ames</NearestTown>
+        <Region>Boone</Region>
+        <State>Iowa</State>
+        <Country>US</Country>
+        <ApsoilNumber>34</ApsoilNumber>
+        <Latitude>42.02204</Latitude>
+        <Longitude>-93.769115</Longitude>
+        <YearOfSampling>0</YearOfSampling>
+        <DataSource>mesured data and web soil survey</DataSource>
+        <Comments>hydrological parameters and BD from Saxton and Rawls, 2006</Comments>
+        <Water>
+          <Thickness>
+            <double>25</double>
+            <double>25</double>
+            <double>50</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <BD>
+            <double>1.25</double>
+            <double>1.25</double>
+            <double>1.25</double>
+            <double>1.25</double>
+            <double>1.25</double>
+            <double>1.35</double>
+            <double>1.35</double>
+            <double>1.36</double>
+            <double>1.36</double>
+            <double>1.36</double>
+            <double>1.6</double>
+            <double>1.6</double>
+            <double>1.6</double>
+            <double>1.6</double>
+            <double>1.6</double>
+            <double>1.6</double>
+            <double>1.6</double>
+            <double>1.6</double>
+            <double>1.6</double>
+            <double>1.6</double>
+          </BD>
+          <AirDry>
+            <double>0.087</double>
+            <double>0.087</double>
+            <double>0.087</double>
+            <double>0.132</double>
+            <double>0.12</double>
+            <double>0.11</double>
+            <double>0.102</double>
+            <double>0.126</double>
+            <double>0.133</double>
+            <double>0.128</double>
+            <double>0.128</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+          </AirDry>
+          <LL15>
+            <double>0.174</double>
+            <double>0.174</double>
+            <double>0.174</double>
+            <double>0.165</double>
+            <double>0.12</double>
+            <double>0.11</double>
+            <double>0.102</double>
+            <double>0.126</double>
+            <double>0.133</double>
+            <double>0.128</double>
+            <double>0.128</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+            <double>0.09</double>
+          </LL15>
+          <DUL>
+            <double>0.31</double>
+            <double>0.31</double>
+            <double>0.3</double>
+            <double>0.25</double>
+            <double>0.22</double>
+            <double>0.21</double>
+            <double>0.22</double>
+            <double>0.265</double>
+            <double>0.261</double>
+            <double>0.253</double>
+            <double>0.2</double>
+            <double>0.2</double>
+            <double>0.2</double>
+            <double>0.2</double>
+            <double>0.2</double>
+            <double>0.2</double>
+            <double>0.2</double>
+            <double>0.2</double>
+            <double>0.2</double>
+            <double>0.2</double>
+          </DUL>
+          <SAT>
+            <double>0.445</double>
+            <double>0.455</double>
+            <double>0.42</double>
+            <double>0.43</double>
+            <double>0.35</double>
+            <double>0.34</double>
+            <double>0.33</double>
+            <double>0.393</double>
+            <double>0.393</double>
+            <double>0.393</double>
+            <double>0.393</double>
+            <double>0.393</double>
+            <double>0.284579354</double>
+            <double>0.272798124</double>
+            <double>0.262657926</double>
+            <double>0.253930177</double>
+            <double>0.246418133</double>
+            <double>0.239952458</double>
+            <double>0.234387399</double>
+            <double>0.229597509</double>
+          </SAT>
+          <KS>
+            <double>146</double>
+            <double>146</double>
+            <double>146</double>
+            <double>146</double>
+            <double>146</double>
+            <double>146</double>
+            <double>133</double>
+            <double>133</double>
+            <double>133</double>
+            <double>388</double>
+            <double>388</double>
+            <double>388</double>
+            <double>54.23610347</double>
+            <double>33.11037914</double>
+            <double>20.21342126</double>
+            <double>12.34000967</double>
+            <double>7.533402525</double>
+            <double>4.599036396</double>
+            <double>2.807647102</double>
+            <double>1.714029108</double>
+          </KS>
+          <BDMetadata>
+            <string />
+            <string>Field measured and checked for sensibility</string>
+            <string>Field measured and checked for sensibility</string>
+            <string>Field measured and checked for sensibility</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </BDMetadata>
+          <AirDryMetadata>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </AirDryMetadata>
+          <LL15Metadata>
+            <string />
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </LL15Metadata>
+          <DULMetadata>
+            <string>Field measured and checked for sensibility</string>
+            <string>Field measured and checked for sensibility</string>
+            <string>Field measured and checked for sensibility</string>
+            <string>Field measured and checked for sensibility</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </DULMetadata>
+          <SATMetadata>
+            <string>Calculated from measured, estimated or calculated BD</string>
+            <string>Calculated from measured, estimated or calculated BD</string>
+            <string>Calculated from measured, estimated or calculated BD</string>
+            <string>Calculated from measured, estimated or calculated BD</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </SATMetadata>
+          <SoilCrop name="maize">
+            <Thickness>
+              <double>25</double>
+              <double>25</double>
+              <double>50</double>
+              <double>100</double>
+              <double>100</double>
+              <double>150</double>
+              <double>150</double>
+              <double>150</double>
+              <double>150</double>
+              <double>150</double>
+              <double>150</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+            </Thickness>
+            <LL>
+              <double>0.174</double>
+              <double>0.174</double>
+              <double>0.174</double>
+              <double>0.165</double>
+              <double>0.12</double>
+              <double>0.136161385</double>
+              <double>0.143526755</double>
+              <double>0.18676725</double>
+              <double>0.197952438</double>
+              <double>0.200535596</double>
+              <double>0.174202479</double>
+              <double>0.169251821</double>
+              <double>0.178877447</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+            </LL>
+            <KL>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.042296394</double>
+              <double>0.035056363</double>
+              <double>0.026136695</double>
+              <double>0.022015015</double>
+              <double>0.016292725</double>
+              <double>0.011175759</double>
+              <double>0.0067466</double>
+              <double>0.003135536</double>
+              <double>0.000603434</double>
+            </KL>
+            <XF>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>0.2</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+            </XF>
+            <LLMetadata>
+              <string />
+              <string>Estimated based on local knowledge</string>
+              <string>Estimated based on local knowledge</string>
+              <string>Estimated based on local knowledge</string>
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+            </LLMetadata>
+          </SoilCrop>
+          <SoilCrop name="soybean">
+            <Thickness>
+              <double>25</double>
+              <double>25</double>
+              <double>50</double>
+              <double>100</double>
+              <double>100</double>
+              <double>150</double>
+              <double>150</double>
+              <double>150</double>
+              <double>150</double>
+              <double>150</double>
+              <double>150</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+            </Thickness>
+            <LL>
+              <double>0.174</double>
+              <double>0.174</double>
+              <double>0.174</double>
+              <double>0.165</double>
+              <double>0.12</double>
+              <double>0.136161385</double>
+              <double>0.143526755</double>
+              <double>0.18676725</double>
+              <double>0.197952438</double>
+              <double>0.200535596</double>
+              <double>0.174202479</double>
+              <double>0.169251821</double>
+              <double>0.178877447</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+              <double>0.188</double>
+            </LL>
+            <KL>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.042296394</double>
+              <double>0.035056363</double>
+              <double>0.026136695</double>
+              <double>0.022015015</double>
+              <double>0.016292725</double>
+              <double>0.011175759</double>
+              <double>0.0067466</double>
+              <double>0.003135536</double>
+              <double>0.000603434</double>
+            </KL>
+            <XF>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>0.2</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+            </XF>
+            <LLMetadata>
+              <string>Estimated based on local knowledge</string>
+              <string>Estimated based on local knowledge</string>
+              <string>Estimated based on local knowledge</string>
+              <string>Estimated based on local knowledge</string>
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+              <string />
+            </LLMetadata>
+          </SoilCrop>
+        </Water>
+        <SoilOrganicMatter>
+          <RootCN>29.8</RootCN>
+          <RootWt>1586.8</RootWt>
+          <SoilCN>12.5</SoilCN>
+          <EnrACoeff>7.4</EnrACoeff>
+          <EnrBCoeff>0.2</EnrBCoeff>
+          <Thickness>
+            <double>25</double>
+            <double>25</double>
+            <double>50</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <OC>
+            <double>2.47</double>
+            <double>2.41</double>
+            <double>2.41</double>
+            <double>2.38</double>
+            <double>1.97</double>
+            <double>1.95</double>
+            <double>0.97</double>
+            <double>0.97</double>
+            <double>0.49</double>
+            <double>0.49</double>
+            <double>0.49</double>
+            <double>0.49</double>
+            <double>0.49</double>
+            <double>0.49</double>
+            <double>0.49</double>
+            <double>0.1</double>
+            <double>0.1</double>
+            <double>0.1</double>
+            <double>0.1</double>
+            <double>0.1</double>
+          </OC>
+          <OCMetadata>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </OCMetadata>
+          <FBiom>
+            <double>0.165</double>
+            <double>0.165</double>
+            <double>0.110862849</double>
+            <double>0.069968428</double>
+            <double>0.049841895</double>
+            <double>0.038418532</double>
+            <double>0.030647884</double>
+            <double>0.025647249</double>
+            <double>0.022649276</double>
+            <double>0.020121141</double>
+            <double>0.018305543</double>
+            <double>0.016266162</double>
+            <double>0.014236964</double>
+            <double>0.01274218</double>
+            <double>0.011587174</double>
+            <double>0.010663114</double>
+            <double>0.009903979</double>
+            <double>0.009267199</double>
+            <double>0.008723983</double>
+            <double>0.008254104</double>
+          </FBiom>
+          <FInert>
+            <double>0.41975</double>
+            <double>0.41975</double>
+            <double>0.41975</double>
+            <double>0.4827125</double>
+            <double>0.5246875</double>
+            <double>0.802815</double>
+            <double>0.82524</double>
+            <double>0.84916</double>
+            <double>0.87009</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+            <double>0.999</double>
+          </FInert>
+          <OCUnits>Total</OCUnits>
+        </SoilOrganicMatter>
+        <Analysis>
+          <Thickness>
+            <double>25</double>
+            <double>25</double>
+            <double>50</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <Texture>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </Texture>
+          <MunsellColour>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </MunsellColour>
+          <PH>
+            <double>7.48</double>
+            <double>7.48</double>
+            <double>7.48</double>
+            <double>7.38</double>
+            <double>7.43</double>
+            <double>7.43</double>
+            <double>7.73</double>
+            <double>7.73</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+            <double>8.08</double>
+          </PH>
+          <PHMetadata>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string>Estimated based on local knowledge</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </PHMetadata>
+          <CEC>
+            <double>25.8</double>
+            <double>25.8</double>
+            <double>25.8</double>
+            <double>25.85</double>
+            <double>26.57</double>
+            <double>26.57</double>
+            <double>23.41</double>
+            <double>23.41</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+            <double>33.6</double>
+          </CEC>
+          <ParticleSizeSand>
+            <double>41.3</double>
+            <double>41.3</double>
+            <double>41.3</double>
+            <double>40.16</double>
+            <double>37.77</double>
+            <double>37.77</double>
+            <double>44.39</double>
+            <double>44.39</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+            <double>49.07</double>
+          </ParticleSizeSand>
+          <ParticleSizeSandMetadata>
+            <string>Measured</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </ParticleSizeSandMetadata>
+          <ParticleSizeSilt>
+            <double>29.78</double>
+            <double>29.78</double>
+            <double>29.78</double>
+            <double>32.59</double>
+            <double>33.01</double>
+            <double>33.01</double>
+            <double>28.07</double>
+            <double>28.07</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+            <double>28.9</double>
+          </ParticleSizeSilt>
+          <ParticleSizeSiltMetadata>
+            <string>Measured</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </ParticleSizeSiltMetadata>
+          <ParticleSizeClay>
+            <double>28.92</double>
+            <double>28.92</double>
+            <double>28.92</double>
+            <double>27.26</double>
+            <double>29.22</double>
+            <double>29.22</double>
+            <double>27.54</double>
+            <double>27.54</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+            <double>22.03</double>
+          </ParticleSizeClay>
+          <ParticleSizeClayMetadata>
+            <string>Measured</string>
+            <string>Measured</string>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </ParticleSizeClayMetadata>
+          <PHUnits>Water</PHUnits>
+          <BoronUnits>HotWater</BoronUnits>
+        </Analysis>
+        <Sample name="Initial nitrogen">
+          <Thickness>
+            <double>25</double>
+            <double>25</double>
+            <double>50</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <NO3>
+            <double>7.04</double>
+            <double>7.36</double>
+            <double>4.8</double>
+            <double>2.4</double>
+            <double>1.6</double>
+            <double>0.988</double>
+            <double>0.988</double>
+            <double>0.539</double>
+            <double>0.539</double>
+            <double>0.49</double>
+            <double>0.292</double>
+            <double>0.104</double>
+            <double>0.188</double>
+            <double>0.167</double>
+            <double>0</double>
+            <double>0.188</double>
+            <double>0.188</double>
+            <double>0.188</double>
+            <double>0.167</double>
+            <double>0</double>
+          </NO3>
+          <NH4>
+            <double>4</double>
+            <double>4</double>
+            <double>4</double>
+            <double>4</double>
+            <double>4</double>
+            <double>4</double>
+            <double>4</double>
+            <double>1</double>
+            <double>1</double>
+            <double>1</double>
+            <double>1</double>
+            <double>0.3</double>
+            <double>0.4</double>
+            <double>0</double>
+            <double>0</double>
+            <double>0.4</double>
+            <double>0.4</double>
+            <double>0.4</double>
+            <double>0</double>
+            <double>0</double>
+          </NH4>
+          <SW>
+            <double>0.31</double>
+            <double>0.31</double>
+            <double>0.3</double>
+            <double>0.25</double>
+            <double>0.22</double>
+            <double>0.21</double>
+            <double>0.22</double>
+            <double>0.265</double>
+            <double>0.261</double>
+            <double>0.253</double>
+            <double>0.2</double>
+            <double>0.393</double>
+            <double>0.285</double>
+            <double>0.273</double>
+            <double>0.263</double>
+            <double>0.254</double>
+            <double>0.246</double>
+            <double>0.24</double>
+            <double>0.234</double>
+            <double>0.23</double>
+          </SW>
+          <NO3Units>ppm</NO3Units>
+          <NH4Units>ppm</NH4Units>
+          <SWUnits>Volumetric</SWUnits>
+          <OCUnits>Total</OCUnits>
+          <PHUnits>Water</PHUnits>
+        </Sample>
+        <Swim>
+          <Salb>0.13</Salb>
+          <CN2Bare>65</CN2Bare>
+          <CNRed>20</CNRed>
+          <CNCov>0.8</CNCov>
+          <KDul>0.25</KDul>
+          <PSIDul>-300</PSIDul>
+          <VC>true</VC>
+          <DTmin>0</DTmin>
+          <DTmax>1440</DTmax>
+          <MaxWaterIncrement>10</MaxWaterIncrement>
+          <SpaceWeightingFactor>0</SpaceWeightingFactor>
+          <SoluteSpaceWeightingFactor>0</SoluteSpaceWeightingFactor>
+          <Diagnostics>false</Diagnostics>
+          <SwimSoluteParameters>
+            <Dis>15</Dis>
+            <Disp>0.75</Disp>
+            <A>1</A>
+            <DTHC>0</DTHC>
+            <DTHP>1</DTHP>
+            <WaterTableCl>0</WaterTableCl>
+            <WaterTableNO3>0</WaterTableNO3>
+            <WaterTableNH4>0</WaterTableNH4>
+            <WaterTableUrea>0</WaterTableUrea>
+            <WaterTableTracer>0</WaterTableTracer>
+            <WaterTableMineralisationInhibitor>0</WaterTableMineralisationInhibitor>
+            <WaterTableUreaseInhibitor>0</WaterTableUreaseInhibitor>
+            <WaterTableNitrificationInhibitor>0</WaterTableNitrificationInhibitor>
+            <WaterTableDenitrificationInhibitor>0</WaterTableDenitrificationInhibitor>
+            <Thickness>
+              <double>1000</double>
+              <double>1000</double>
+              <double>1000</double>
+            </Thickness>
+            <NO3Exco>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+            </NO3Exco>
+            <NO3FIP>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+            </NO3FIP>
+            <NH4Exco>
+              <double>100</double>
+              <double>100</double>
+              <double>100</double>
+            </NH4Exco>
+            <NH4FIP>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+            </NH4FIP>
+            <UreaExco>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+            </UreaExco>
+            <UreaFIP>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+            </UreaFIP>
+            <ClExco>
+              <double>0</double>
+              <double>0</double>
+              <double>0</double>
+            </ClExco>
+            <ClFIP>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+            </ClFIP>
+          </SwimSoluteParameters>
+          <SwimSubsurfaceDrain>
+            <DrainDepth>900</DrainDepth>
+            <DrainSpacing>45000</DrainSpacing>
+            <DrainRadius>100</DrainRadius>
+            <Klat>250</Klat>
+            <ImpermDepth>3900</ImpermDepth>
+          </SwimSubsurfaceDrain>
+        </Swim>
+        <SoilTemperature>
+          <BoundaryLayerConductance>20</BoundaryLayerConductance>
+          <Thickness>
+            <double>25</double>
+            <double>25</double>
+            <double>50</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <InitialSoilTemperature>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>9</double>
+            <double>9</double>
+            <double>9</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>10</double>
+            <double>9</double>
+            <double>9</double>
+            <double>9</double>
+          </InitialSoilTemperature>
+        </SoilTemperature>
+        <ini>
+          <filename input="yes">Soil_7.9.xml</filename>
+        </ini>
+      </Soil>
+      <manager name="WT_script1">
+        <script>
+          <text>
+          </text>
+          <event>init</event>
+        </script>
+        <script>
+          <text>bbc_potential = 390 - 130 ! profile depth minus WR
+
+
+if AnnualRain &gt; 0 then 
+EORRatio = AnnualEO / AnnualRain  ! EO is potential ET theoretical not affected by Rain
+endif
+
+RainSurplus = AnnualRain - AnnualEO </text>
+          <event>start_of_day</event>
+        </script>
+        <script>
+          <text>
+          </text>
+          <event>end_of_day</event>
+        </script>
+      </manager>
+      <manager2 name="Kill Plants Early Maize">
+        <ui>
+          <cat1 type="category" description="Control Area" />
+          <cropToKill type="crop" description="Crop to kill">maize</cropToKill>
+          <startStage type="text" description="Start stage to kill crop over">1</startStage>
+          <endStage type="text" description="End stage to kill crop ">3.5</endStage>
+          <maxLayer type="text" description="How many layers to calc sw effects over">3</maxLayer>
+          <moistLim type="text" description="Number of days to average moisture over">2</moistLim>
+          <tempLim type="text" description="Number of days to average min temp over">2</tempLim>
+          <cat2 type="category" description="Linear Interpolation Area (comma separate values)" />
+          <xMoistString type="text" description="Moisture Linear interpolation x values (0 = ll, 1 = dul, 2 = sat)">0,0.5,1.5,2</xMoistString>
+          <yMoistString type="text" description="Moisture Linear interpolation y values (0 = no effect, 1 = crop dies)">0.01,0.0,0.0,0.03</yMoistString>
+          <xTempString type="text" description="Temp Linear interpolation x values (oC)">-3.5,0.0</xTempString>
+          <yTempString type="text" description="Temp Linear interpolation y values (0 = no effect, 1 = crop dies)">0.1,0.0</yTempString>
+        </ui>
+        <text>
+using System;
+using ModelFramework;
+using CSGeneral;
+using System.Linq;
+using System.Collections.Generic;
+
+public class Script 
+{      
+   [Link] Paddock MyPaddock; // Can be used to dynamically get access to simulation structure and variables
+   [Input] DateTime Today;   // Equates to the value of the current simulation date - value comes from CLOCK
+      
+   
+   [Input] double[] sw;
+   [Input] double[] ll15;
+   [Input] double[] dul;
+   [Input] double[] sat;
+   [Input] double mint;
+   
+   [Param] int maxLayer;       //Max layer to calculate SW stuff over
+   [Param] int moistLim;       //Tracker day limits
+   [Param] int tempLim;
+   [Param] double startStage; //Stages to kill between
+   [Param] double endStage;
+   [Param] string cropToKill;
+   
+   //Linear interpolaton function definitions
+   [Param] string xMoistString;
+   [Param] string yMoistString;
+   
+   [Param] string xTempString;
+   [Param] string yTempString;
+   
+   //Linear interpolation function 
+   [Output] double B;        // An example of how to make a variable available to other APSIM modules
+
+
+   //This is the crop that we will be killing
+   private Component comp;
+   
+   //Data for linear interpolation functions
+   private double[] xMoist;
+   private double[] yMoist;
+   
+   private double[] xTemp;
+   private double[] yTemp;
+   
+   private List&lt;double&gt; moistTracker = new List&lt;double&gt;();
+   private List&lt;double&gt; tempTracker = new List&lt;double&gt;();
+   
+   //The linear interpolation method in MathUtility needs this for some reason
+   private bool lin_int; 
+   // The following event handler will be called once at the beginning of the simulation
+   [EventHandler] public void OnInitialised()
+   {
+      
+      comp = (Component) MyPaddock.LinkByName(cropToKill);
+      
+      xMoist = (from a in xMoistString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+      yMoist = (from a in yMoistString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+      xTemp = (from a in xTempString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+      yTemp = (from a in yTempString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+   }
+
+   // The following event handler will be called each day at the beginning of the day
+   [EventHandler] public void OnPrepare()
+   {
+      double currentStage;
+      MyPaddock.Get(cropToKill + ".stage", out currentStage);
+      
+      moistTracker.Add(sw.Take(maxLayer).Average());
+      if (moistTracker.Count &gt; moistLim)
+         moistTracker.RemoveAt(0);
+      
+      tempTracker.Add(mint);
+      if (tempTracker.Count &gt; tempLim)
+         tempTracker.RemoveAt(0);
+      
+      if (currentStage &gt; startStage &amp;&amp; currentStage &lt;= endStage)
+      {
+         double moist_x = CalcSWPercentX(ll15.Take(maxLayer).Average(),
+            dul.Take(maxLayer).Average(),
+            sat.Take(maxLayer).Average(),
+            moistTracker.Average());
+         
+         double moistKillFR = MathUtility.LinearInterpReal(moist_x, xMoist, yMoist, out lin_int);
+         
+         double temp_x = tempTracker.Average();
+         double tempKillFR = MathUtility.LinearInterpReal(temp_x, xTemp, yTemp, out lin_int);
+         
+         double killFR = Math.Max(moistKillFR, tempKillFR);
+         //Don't even bother if killFR is 0.
+         if (killFR &gt; 0.0)
+         {
+            KillCropType data = new KillCropType();
+            data.KillFraction = (float) killFR;
+            comp.Publish("kill_crop", data);
+         }
+      }
+      
+   }
+   
+   //Calculates sw "percent" for linear interpolation function X axis
+   private double CalcSWPercentX(double ll, double dul, double sat, double sw)
+   {
+      double ret;
+      if (sw &lt; dul)
+      {
+         ret = (sw - ll) / (dul - ll);
+         return MathUtility.Constrain(ret, 0.0, 1.0);
+         
+      }
+      else 
+      {
+         ret = 1.0 + (sw - dul) / (sat - dul);
+         return MathUtility.Constrain(ret, 1.0, 2.0);
+      }
+       
+      
+      
+   }
+
+}
+  </text>
+      </manager2>
+      <manager2 name="MaizeRUELimit">
+        <ui>
+          <category2 type="category" description="Tracking Information for SW and Temp Disease" />
+          <moistDaysBefore type="text" description="Days before sowing to track average moisture over">14</moistDaysBefore>
+          <moistDaysAfter type="text" description="Days after sowing to keep tracking moisture over">1</moistDaysAfter>
+          <moistMaxLayers type="text" description="Number of soil layers to track moisture over">2</moistMaxLayers>
+          <coldStage type="text" description="Crop Stage to track coldness up to">4</coldStage>
+          <coldTT type="text" description="TT must be under this to be considered cold">4</coldTT>
+          <category1 type="category" description="Linear Interpolation Function Definitions (always comma separated)" />
+          <xSurfaceOMString type="text" description="Comma separated x coordinates for surfaceOM linear interpolation function (kg Maize Residue/ha)">0,2500,10000</xSurfaceOMString>
+          <ySurfaceOMString type="text" description="Comma separated y coordinates for above function">1,1,0.96</ySurfaceOMString>
+          <xMoistureString type="text" description="Comma separated x moisture coordinates for disease (0 = ll, 1 = dul, 2 = sat)">0,1,2</xMoistureString>
+          <yMoistureString type="text" description="Comma separated y modifier for the above x coordinates">0.97,1.0,0.94</yMoistureString>
+          <xTTString type="text" description="Comma separated TT number for temperatue disease">0,15,100</xTTString>
+          <yTTString type="text" description="Comma separated y modifier for TT ">1,0.96,0.92</yTTString>
+          <category3 type="category" description="Previous Crop at Start of Simulation" />
+          <prevCrop type="list" listvalues="maize,something else" description="Previous crop? relevant to year 1 only">maize</prevCrop>
+        </ui>
+        <text>
+using System;
+using System.Collections.Generic; //For List 
+using ModelFramework; //APSIM model objects found here
+using CSGeneral; //MathUtility and other utilities
+using System.Linq; //Lots of good syntax and methods here for objects that extend the Enumerable interface (like lists or arrays)
+
+public class Script 
+{      
+   [Link] Paddock MyPaddock; // Can be used to dynamicall15y get access to simulation structure and variables
+   [Link] Maize LocalMaize; //Need this to get maize's TT.
+   [Input] DateTime Today;   
+   [Input] double surfaceom_wt; //Input links by name
+   [Input] double[] sw;
+   [Input] double[] ll15;
+   [Input] double[] dul;
+   [Input] double[] sat;
+   
+   [Param] int moistDaysBefore;
+   [Param] int moistDaysAfter;
+   [Param] int moistMaxLayers;
+   
+   [Param] double coldStage;
+   [Param] double coldTT; 
+   
+   
+   
+   [Param] string xSurfaceOMString; //Comma separated list of x coordinates for SurfaceOM linear interpolation.
+   [Param] string ySurfaceOMString; // Comma separated list of y coordinates for the same function
+   
+   [Param] string xMoistureString;
+   [Param] string yMoistureString;
+   
+   [Param] string xTTString;
+   [Param] string yTTString;
+   
+   [Param] string prevCrop; //was the previous crop maize?
+   
+   
+   private List&lt;double&gt; moistTracker = new List&lt;double&gt;();
+   private List&lt;double&gt; ttTracker = new List&lt;double&gt;();
+
+
+   //Arrays that store the Linear interpolation function values
+   private double[] xSurfaceOM;
+   private double[] ySurfaceOM;
+   
+   private double[] xMoist;
+   private double[] yMoist;
+   
+   private double[] xTT;
+   private double[] yTT;
+   
+   private double[] localRue;
+   private double[] newRue;
+   private bool afterSowing = false;
+   private bool lin_int; //Linear interpolation expects a bool as an out arg for some reason...
+   private int dasCount = 0;
+   private bool prevCropMaize;
+   
+   [Output] double resmod;
+   [Output] double moistmod;
+   [Output] double ttmod;
+   [Output] float myTT;
+   
+   private double stageYesterday;
+   // The foll15owing event handler will15 be call15ed once at the beginning of the simulation
+   [EventHandler] public void OnInitialised()
+   {
+      //Linq query syntax
+      xSurfaceOM = (from a in xSurfaceOMString.Split(',')
+           select Convert.ToDouble(a)).ToArray();
+      
+      ySurfaceOM = (from a in ySurfaceOMString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+      xMoist = (from a in xMoistureString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+      yMoist = (from a in yMoistureString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+      xTT = (from a in xTTString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+      yTT = (from a in yTTString.Split(',')
+            select Convert.ToDouble(a)).ToArray();
+      
+      if (prevCrop == "maize")
+         prevCropMaize = true;
+      else
+         prevCropMaize = false;
+      
+
+   }
+   
+   
+   //Ideall15y we would read RUE here, but cultivar parameters are not set until later
+   [EventHandler] public void OnSowing()
+   {
+      afterSowing = true;
+      dasCount = 0;
+      
+      resmod = 1.0;
+      moistmod = 1.0;
+      ttmod = 1.0;
+      
+   }
+
+   
+   [EventHandler] public void OnProcess()
+   {
+      //Did not sow maize
+      if (afterSowing &amp;&amp; LocalMaize.plant_status == "out")
+      {
+         afterSowing = false;
+      }
+      
+      //Certain cultivar parameters do not get read until end of day. Need to somehow check previous crop too 
+      if (afterSowing) 
+      { 
+         MyPaddock.Get("rue", out localRue); //Need to get RUE even if maize not prev crop for other diseases
+         
+         if (prevCropMaize)
+            resmod = MathUtility.LinearInterpReal(surfaceom_wt, xSurfaceOM, ySurfaceOM, out lin_int);
+         
+         afterSowing = false;
+      }
+      
+      double moisture = sw.Take(moistMaxLayers).Average();
+      moistTracker.Add(moisture);
+      
+      if (moistTracker.Count &gt; moistDaysBefore + moistDaysAfter)
+         moistTracker.RemoveAt(0);
+      
+      if (dasCount == moistDaysAfter) 
+      {
+         double x_moist = CalcSWDiseaseX(
+            ll15.Take(moistMaxLayers).Average(), 
+            dul.Take(moistMaxLayers).Average(),
+            sat.Take(moistMaxLayers).Average(),
+            moistTracker.Average());
+         
+          moistmod = MathUtility.LinearInterpReal(x_moist, xMoist, yMoist, out lin_int);
+      }
+      
+      //We must fill15 the ttTracker in the OnProcess step rather than here. Maybe the entire script should be...
+      
+      if (LocalMaize.stage &gt; 0.0 &amp;&amp; LocalMaize.stage &lt; coldStage)
+         if (LocalMaize.TT &lt; coldTT)
+            ttTracker.Add(coldTT - LocalMaize.TT);
+      
+      //Set the new RUE value when pass this stage
+      if (stageYesterday &lt; coldStage &amp;&amp; LocalMaize.stage &gt;= coldStage &amp;&amp; prevCropMaize)  // remove this (&amp;&amp; prevCropMaize) to be generic
+      {
+         double tt_sum = ttTracker.Sum();
+         ttmod = MathUtility.LinearInterpReal(tt_sum, xTT, yTT, out lin_int);
+         
+         ttTracker.Clear();
+         
+         
+         newRue = localRue.Select(x =&gt; x * resmod * moistmod * ttmod).ToArray();
+         MyPaddock.Set("maize.rue", newRue);
+      }
+      
+      stageYesterday = (double) LocalMaize.stage;
+      
+      dasCount++;
+   }
+   
+   [EventHandler] public void OnHarvesting()
+   {
+      //If maize is not what is being harvested then the previous crop wasn't maize!
+      //Incompatible with intercropping
+      if (LocalMaize.plant_status != "out")
+         prevCropMaize = true;
+      else
+         prevCropMaize = false;
+   }
+   
+   
+   //Calculates sw "percent" for linear interpolation function X axis
+   private double CalcSWDiseaseX(double ll15, double dul, double sat, double sw)
+   {
+      double ret;
+      if (sw &lt; dul)
+      {
+         ret = (sw - ll15) / (dul - ll15);
+         return MathUtility.Constrain(ret, 0.0, 1.0);
+         
+      }
+      else 
+      {
+         ret = 1.0 + (sw - dul) / (sat - dul);
+         return MathUtility.Constrain(ret, 1.0, 2.0);
+      }
+       
+      
+      
+   }
+   
+   
+   
+
+}
+  </text>
+      </manager2>
+    </area>
+  </simulation>
+</folder>
